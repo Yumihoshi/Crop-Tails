@@ -13,6 +13,6 @@ namespace LumiVerseFramework.Base.FSM.Types;
 /// </summary>
 public enum StateType
 {
-    Test,
-    Test2
+    PlayerIdle = 1,
+    PlayerMove,
 }
