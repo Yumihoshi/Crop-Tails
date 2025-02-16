@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://55lg4nyw23fb"]
+[gd_scene load_steps=46 format=3 uid="uid://55lg4nyw23fb"]
 
 [ext_resource type="Texture2D" uid="uid://btx3xojjhwfg3" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/BasicCharakterSpritesheet.png" id="1_8b184"]
 [ext_resource type="Texture2D" uid="uid://ivfrej8har65" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/BasicCharakterActions.png" id="2_dxec7"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerFsm.cs" id="3_njhs0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxkln"]
 atlas = ExtResource("2_dxec7")
@@ -394,10 +395,15 @@ radius = 8.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_acthe")
-animation = &"IdleDown"
+animation = &"WalkDown"
 autoplay = "IdleDown"
-frame_progress = 0.772885
+frame_progress = 0.418542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_usckw")
+
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("_player", "_animatedSprite2D")]
+script = ExtResource("3_njhs0")
+_player = NodePath("..")
+_animatedSprite2D = NodePath("../AnimatedSprite2D")

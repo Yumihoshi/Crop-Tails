@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://bsy1ymuybhlgk"]
+[gd_scene load_steps=3 format=4 uid="uid://bsy1ymuybhlgk"]
 
 [ext_resource type="TileSet" uid="uid://bmmtdaptfejob" path="res://Assets/Tilesets/TestSceneTilemap.tres" id="1_o26qg"]
+[ext_resource type="PackedScene" uid="uid://55lg4nyw23fb" path="res://Scenes/Character/Player/Player.tscn" id="2_mjrex"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 
@@ -25,3 +26,6 @@ tile_set = ExtResource("1_o26qg")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(254, 137)
 zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_mjrex")]
+position = Vector2(235, 142)

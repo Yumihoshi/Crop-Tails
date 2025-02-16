@@ -6,6 +6,8 @@
 // @description:
 // *****************************************************************************
 
+using Godot;
+
 namespace LumiVerseFramework.Base.FSM;
 
 /// <summary>
@@ -13,4 +15,5 @@ namespace LumiVerseFramework.Base.FSM;
 /// </summary>
 public class StateContext
 {
+    public Vector2 Direction { get; set; }
 }
