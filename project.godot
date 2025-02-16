@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Crop-Tails"
+run/main_scene="res://Scenes/Test/TestSceneTilemap.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Assets/Imgs/Icons/DefaultIcon.png"
 
@@ -18,8 +19,10 @@ config/icon="res://Assets/Imgs/Icons/DefaultIcon.png"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
