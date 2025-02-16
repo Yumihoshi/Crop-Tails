@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2spqdbuwecgh"
-path="res://.godot/imported/Wood_Bridge.png-593f173f07e6360921b46b9c57bd42ca.ctex"
+uid="uid://12504morhbso"
+path="res://.godot/imported/BasicGrassBiomThings.png-274dd5464649e0771eceaa3c778383bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Wood_Bridge.png"
-dest_files=["res://.godot/imported/Wood_Bridge.png-593f173f07e6360921b46b9c57bd42ca.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/BasicGrassBiomThings.png"
+dest_files=["res://.godot/imported/BasicGrassBiomThings.png-274dd5464649e0771eceaa3c778383bd.ctex"]
 
 [params]
 

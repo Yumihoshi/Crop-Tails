@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btx3xojjhwfg3"
-path="res://.godot/imported/Basic Charakter Spritesheet.png-838fbedcb1aa7b1a0e596cfaf6be0fd5.ctex"
+uid="uid://djrai5nygf5se"
+path="res://.godot/imported/EggItem.png-8b8c7f46b43af977505079f245e4db07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png"
-dest_files=["res://.godot/imported/Basic Charakter Spritesheet.png-838fbedcb1aa7b1a0e596cfaf6be0fd5.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/EggItem.png"
+dest_files=["res://.godot/imported/EggItem.png-8b8c7f46b43af977505079f245e4db07.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp0627kuu4xyf"
-path="res://.godot/imported/Sprout Lands defautlt palette snip.PNG-74e13088f4dc00dd16ea850d32e793ad.ctex"
+uid="uid://bsl6o5507v83"
+path="res://.godot/imported/BasicToolsAndMeterials.png-f30e9ef1aef6c3378c3cbe2533e56e48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands color pallet/Sprout Lands defautlt palette snip.PNG"
-dest_files=["res://.godot/imported/Sprout Lands defautlt palette snip.PNG-74e13088f4dc00dd16ea850d32e793ad.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/BasicToolsAndMeterials.png"
+dest_files=["res://.godot/imported/BasicToolsAndMeterials.png-f30e9ef1aef6c3378c3cbe2533e56e48.ctex"]
 
 [params]
 

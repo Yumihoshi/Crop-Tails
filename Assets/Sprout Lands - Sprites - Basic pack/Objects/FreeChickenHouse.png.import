@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5170jwjvionf"
-path="res://.godot/imported/Free Cow Sprites.png-cdab9da1b15e9102ed7578f3bdad237d.ctex"
+uid="uid://dqb32ya0t7dqj"
+path="res://.godot/imported/FreeChickenHouse.png-a50f55580e9a263630427dc24ec9abf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png"
-dest_files=["res://.godot/imported/Free Cow Sprites.png-cdab9da1b15e9102ed7578f3bdad237d.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/FreeChickenHouse.png"
+dest_files=["res://.godot/imported/FreeChickenHouse.png-a50f55580e9a263630427dc24ec9abf8.ctex"]
 
 [params]
 

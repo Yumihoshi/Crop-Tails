@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbs02ssqaouke"
-path="res://.godot/imported/Free Chicken Sprites.png-b0cd271a9d20c71adee1a4f298f1165c.ctex"
+uid="uid://2spqdbuwecgh"
+path="res://.godot/imported/WoodBridge.png-a2d24e5dc46063aa2fbe7628776fb7e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png"
-dest_files=["res://.godot/imported/Free Chicken Sprites.png-b0cd271a9d20c71adee1a4f298f1165c.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/WoodBridge.png"
+dest_files=["res://.godot/imported/WoodBridge.png-a2d24e5dc46063aa2fbe7628776fb7e1.ctex"]
 
 [params]
 

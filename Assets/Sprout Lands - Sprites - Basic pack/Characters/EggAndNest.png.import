@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duidy6hnw3l5s"
-path="res://.godot/imported/Sprout Lands defautlt palette.png-cfc5809cfa6ca1d412c63930f2ee413c.ctex"
+uid="uid://dy82rcubsbbnh"
+path="res://.godot/imported/EggAndNest.png-1f56e7b04a5bd464b6b69959b4715107.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands color pallet/Sprout Lands defautlt palette.png"
-dest_files=["res://.godot/imported/Sprout Lands defautlt palette.png-cfc5809cfa6ca1d412c63930f2ee413c.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/EggAndNest.png"
+dest_files=["res://.godot/imported/EggAndNest.png-1f56e7b04a5bd464b6b69959b4715107.ctex"]
 
 [params]
 

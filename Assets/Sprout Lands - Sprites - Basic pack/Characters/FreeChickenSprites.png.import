@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy82rcubsbbnh"
-path="res://.godot/imported/Egg_And_Nest.png-19bb92625393d21dba49724de1b9d352.ctex"
+uid="uid://bbs02ssqaouke"
+path="res://.godot/imported/FreeChickenSprites.png-567a7a5e7a4cef0d401c18ed845680d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png"
-dest_files=["res://.godot/imported/Egg_And_Nest.png-19bb92625393d21dba49724de1b9d352.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/FreeChickenSprites.png"
+dest_files=["res://.godot/imported/FreeChickenSprites.png-567a7a5e7a4cef0d401c18ed845680d9.ctex"]
 
 [params]
 

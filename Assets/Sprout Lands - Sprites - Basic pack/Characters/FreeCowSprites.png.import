@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsl6o5507v83"
-path="res://.godot/imported/Basic_tools_and_meterials.png-ca97b4075e9e5f96ded98c9eef37875f.ctex"
+uid="uid://5170jwjvionf"
+path="res://.godot/imported/FreeCowSprites.png-305e1cccdc1146a8eb5a464cb489d355.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png"
-dest_files=["res://.godot/imported/Basic_tools_and_meterials.png-ca97b4075e9e5f96ded98c9eef37875f.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/FreeCowSprites.png"
+dest_files=["res://.godot/imported/FreeCowSprites.png-305e1cccdc1146a8eb5a464cb489d355.ctex"]
 
 [params]
 
