@@ -116,5 +116,6 @@ public class IdleState : IState
     {
         _animationTree.Set("parameters/Idle/blend_position", _direction);
         _animationTree.Set("parameters/conditions/Idle", true);
+        _animationTree.Advance(0.01f);
     }
 }

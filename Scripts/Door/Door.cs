@@ -31,4 +31,11 @@ public partial class Door : StaticBody2D
         _collisionShape2D.SetDeferred("disabled", false);
         _animatedSprite2D.Play("CloseDoor");
     }
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        _interactableComponent.InteractableActivated -= OnInteractableActivated;
+        _interactableComponent.InteractableDeactivated -= OnInteractableDeactivated;
+    }
 }

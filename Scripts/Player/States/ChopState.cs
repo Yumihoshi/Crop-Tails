@@ -55,6 +55,7 @@ public class ChopState : IState
 
     public void OnExit(StateContext context = null)
     {
+        _animationPlayer.Stop();
         _animationTree.Set("parameters/conditions/Chop", false);
     }
 }

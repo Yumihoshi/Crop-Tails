@@ -18,6 +18,7 @@ public partial class PlayerFsm : FsmNode<PlayerStateType>
     [ExportGroup("依赖节点")] [Export] private AnimationTree _animationTree;
 
     [Export] private AnimationPlayer _animationPlayer;
+    [Export] public CollisionShape2D HitComponentCollisionShape2D { get; set; }
     [ExportGroup("属性配置")] [Export] public int Speed { get; set; } = 100;
     private Player _playerNode;
     private CharacterBody2D _player;
@@ -27,6 +28,8 @@ public partial class PlayerFsm : FsmNode<PlayerStateType>
         base._Ready();
         _playerNode = GetNode<Player>("..");
         _player = GetNode<CharacterBody2D>("..");
+        HitComponentCollisionShape2D.SetDeferred("disabled", true);
+        HitComponentCollisionShape2D.Position = Vector2.Zero;
         Fsm.AddState(PlayerStateType.Idle,
             new IdleState(_player, _animationTree, _animationPlayer,
                 this));

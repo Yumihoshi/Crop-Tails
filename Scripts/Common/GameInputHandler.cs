@@ -56,6 +56,6 @@ public static class GameInputHandler
     /// <returns></returns>
     public static bool UseTool()
     {
-        return Input.IsActionJustPressed("Hit") || Input.IsActionPressed("Hit");
+        return Input.IsActionJustPressed("Hit");
     }
 }

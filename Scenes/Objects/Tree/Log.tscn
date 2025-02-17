@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmu5diyag6nmn"]
+
+[ext_resource type="Texture2D" uid="uid://12504morhbso" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/BasicGrassBiomThings.png" id="1_8xare"]
+[ext_resource type="PackedScene" uid="uid://cgmndmjehf55v" path="res://Scenes/Components/CollectableComponent.tscn" id="2_jomkt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eukna"]
+atlas = ExtResource("1_8xare")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayuqk"]
+size = Vector2(16, 10)
+
+[node name="Log" type="Sprite2D"]
+texture = SubResource("AtlasTexture_eukna")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_jomkt")]
+CollectableName = "木材"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("RectangleShape2D_ayuqk")
+debug_color = Color(0.288036, 0.614329, 0.406815, 0.42)

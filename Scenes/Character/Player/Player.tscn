@@ -1,9 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://55lg4nyw23fb"]
+[gd_scene load_steps=66 format=3 uid="uid://55lg4nyw23fb"]
 
 [ext_resource type="Texture2D" uid="uid://btx3xojjhwfg3" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/BasicCharakterSpritesheet.png" id="1_8b184"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_51o63"]
 [ext_resource type="Texture2D" uid="uid://ivfrej8har65" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/BasicCharakterActions.png" id="2_dxec7"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerFsm.cs" id="3_njhs0"]
+[ext_resource type="PackedScene" uid="uid://k1vof0c3euho" path="res://Scenes/Components/HitComponent.tscn" id="5_w7jg1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh63e"]
 size = Vector2(12, 6)
@@ -74,6 +75,30 @@ tracks/4/keys = {
 "method": &"SwitchIdleState"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HitComponent/HitCollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HitComponent/HitCollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_euy8p"]
 resource_name = "ChopLeft"
@@ -140,6 +165,30 @@ tracks/4/keys = {
 "args": [Vector2(-1, 0)],
 "method": &"SwitchIdleState"
 }]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HitComponent/HitCollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-9, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HitComponent/HitCollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_ro88i"]
@@ -208,6 +257,30 @@ tracks/4/keys = {
 "method": &"SwitchIdleState"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HitComponent/HitCollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(9, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HitComponent/HitCollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_habsh"]
 resource_name = "ChopUp"
@@ -274,6 +347,30 @@ tracks/4/keys = {
 "args": [Vector2(0, -1)],
 "method": &"SwitchIdleState"
 }]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HitComponent/HitCollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HitComponent/HitCollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_jddwr"]
@@ -541,6 +638,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [12]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitComponent/HitCollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HitComponent/HitCollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_2j2jn"]
@@ -1489,6 +1610,9 @@ states/Water/node = SubResource("AnimationNodeBlendSpace2D_a588k")
 states/Water/position = Vector2(450.148, 175.062)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ple8s"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_0m42q"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_317dm"), "Idle", "Chop", SubResource("AnimationNodeStateMachineTransition_5y2p0"), "Chop", "Idle", SubResource("AnimationNodeStateMachineTransition_61uad"), "Idle", "Till", SubResource("AnimationNodeStateMachineTransition_0v8tb"), "Till", "Idle", SubResource("AnimationNodeStateMachineTransition_qtgvu"), "Idle", "Water", SubResource("AnimationNodeStateMachineTransition_bfyip"), "Water", "Idle", SubResource("AnimationNodeStateMachineTransition_n0wg3")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1f00"]
+radius = 4.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_51o63")
@@ -1504,10 +1628,11 @@ vframes = 12
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_mh63e")
 
-[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("_animationTree", "_animationPlayer")]
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("_animationTree", "_animationPlayer", "HitComponentCollisionShape2D")]
 script = ExtResource("3_njhs0")
 _animationTree = NodePath("../AnimationTree")
 _animationPlayer = NodePath("../AnimationPlayer")
+HitComponentCollisionShape2D = NodePath("../HitComponent/HitCollisionShape2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1528,3 +1653,10 @@ parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Till/blend_position = Vector2(0, -1)
 parameters/Walk/blend_position = Vector2(-1, 0)
 parameters/Water/blend_position = Vector2(0, -1)
+
+[node name="HitComponent" parent="." instance=ExtResource("5_w7jg1")]
+
+[node name="HitCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+shape = SubResource("CircleShape2D_u1f00")
+disabled = true
+debug_color = Color(0.752691, 0.366377, 0.708531, 0.42)
