@@ -1614,6 +1614,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 radius = 4.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_mask = 6
 script = ExtResource("1_51o63")
 CurrentTool = 1

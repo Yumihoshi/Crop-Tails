@@ -89,7 +89,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jopy5"]
-size = Vector2(10, 62)
+size = Vector2(22, 52)
 
 [node name="Door" type="StaticBody2D" node_paths=PackedStringArray("_animatedSprite2D", "_collisionShape2D")]
 collision_layer = 2
