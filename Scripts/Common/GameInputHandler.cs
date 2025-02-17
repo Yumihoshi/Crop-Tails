@@ -20,25 +20,22 @@ public static class GameInputHandler
     /// <returns></returns>
     public static Vector2 GetInputDirection()
     {
+        _direction = Vector2.Zero;
+        if (Input.IsActionPressed("WalkLeft"))
+        {
+            _direction.X = -1;
+        }
+        if (Input.IsActionPressed("WalkRight"))
+        {
+            _direction.X = 1;
+        }
         if (Input.IsActionPressed("WalkUp"))
         {
-            _direction = Vector2.Up;
+            _direction.Y = -1;
         }
-        else if (Input.IsActionPressed("WalkDown"))
+        if (Input.IsActionPressed("WalkDown"))
         {
-            _direction = Vector2.Down;
-        }
-        else if (Input.IsActionPressed("WalkLeft"))
-        {
-            _direction = Vector2.Left;
-        }
-        else if (Input.IsActionPressed("WalkRight"))
-        {
-            _direction = Vector2.Right;
-        }
-        else
-        {
-            _direction = Vector2.Zero;
+            _direction.Y = 1;
         }
 
         return _direction;

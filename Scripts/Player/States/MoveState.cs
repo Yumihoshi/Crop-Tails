@@ -17,16 +17,20 @@ namespace CropTails.Scripts.Player.States;
 public class MoveState : IState
 {
     private readonly CharacterBody2D _player;
-    private readonly AnimatedSprite2D _animatedSprite2D;
+    private readonly AnimationTree _animationTree;
+    private readonly AnimationPlayer _animationPlayer;
     private readonly PlayerFsm _fsm;
     private Vector2 _direction = Vector2.Down;
 
-    public MoveState(CharacterBody2D player, AnimatedSprite2D animatedSprite2D,
+    public MoveState(CharacterBody2D player,
+        AnimationTree animationTree,
+        AnimationPlayer animationPlayer,
         PlayerFsm fsm)
     {
         _player = player;
-        _animatedSprite2D = animatedSprite2D;
         _fsm = fsm;
+        _animationPlayer = animationPlayer;
+        _animationTree = animationTree;
     }
 
     public bool OnCheck(StateContext context = null)
@@ -42,21 +46,10 @@ public class MoveState : IState
     public void OnProcess()
     {
         Vector2 newDirection = GameInputHandler.GetInputDirection();
-        if (newDirection == Vector2.Up)
+        if (newDirection != Vector2.Zero)
         {
-            _animatedSprite2D.Play("WalkUp");
-        }
-        else if (newDirection == Vector2.Down)
-        {
-            _animatedSprite2D.Play("WalkDown");
-        }
-        else if (newDirection == Vector2.Left)
-        {
-            _animatedSprite2D.Play("WalkLeft");
-        }
-        else if (newDirection == Vector2.Right)
-        {
-            _animatedSprite2D.Play("WalkRight");
+            _animationTree.Set("parameters/Walk/blend_position", newDirection);
+            _animationTree.Set("parameters/conditions/Move", true);
         }
         else
         {
@@ -66,17 +59,19 @@ public class MoveState : IState
                     Direction = _direction
                 });
         }
+
         _direction = newDirection;
     }
 
     public void OnPhysicsProcess()
     {
-        _player.Velocity = _direction * _fsm.Speed;
+        _player.Velocity = _direction.Normalized() * _fsm.Speed;
         _player.MoveAndSlide();
     }
 
     public void OnExit(StateContext context = null)
     {
-        _animatedSprite2D.Stop();
+        _animationPlayer.Stop();
+        _animationTree.Set("parameters/conditions/Move", false);
     }
 }

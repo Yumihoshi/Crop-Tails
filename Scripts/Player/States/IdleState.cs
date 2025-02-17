@@ -19,17 +19,20 @@ namespace CropTails.Scripts.Player.States;
 public class IdleState : IState
 {
     private readonly CharacterBody2D _player;
-    private readonly AnimatedSprite2D _animatedSprite2D;
+    private readonly AnimationTree _animationTree;
+    private readonly AnimationPlayer _animationPlayer;
     private readonly PlayerFsm _fsm;
     private Vector2 _direction = Vector2.Down;
     private Vector2 _lastDirection = Vector2.Down;
 
     public IdleState(CharacterBody2D player,
-        AnimatedSprite2D animatedSprite2D, PlayerFsm fsm)
+        AnimationTree animationTree, AnimationPlayer animationPlayer,
+        PlayerFsm fsm)
     {
         _player = player;
-        _animatedSprite2D = animatedSprite2D;
+        _animationTree = animationTree;
         _fsm = fsm;
+        _animationPlayer = animationPlayer;
     }
 
     public bool OnCheck(StateContext context = null)
@@ -102,7 +105,8 @@ public class IdleState : IState
 
     public void OnExit(StateContext context = null)
     {
-        _animatedSprite2D.Stop();
+        _animationPlayer.Stop();
+        _animationTree.Set("parameters/conditions/Idle", false);
     }
 
     /// <summary>
@@ -110,21 +114,7 @@ public class IdleState : IState
     /// </summary>
     private void HandleAnimation()
     {
-        if (_direction == Vector2.Up)
-        {
-            _animatedSprite2D.Play("IdleUp");
-        }
-        else if (_direction == Vector2.Down)
-        {
-            _animatedSprite2D.Play("IdleDown");
-        }
-        else if (_direction == Vector2.Left)
-        {
-            _animatedSprite2D.Play("IdleLeft");
-        }
-        else if (_direction == Vector2.Right)
-        {
-            _animatedSprite2D.Play("IdleRight");
-        }
+        _animationTree.Set("parameters/Idle/blend_position", _direction);
+        _animationTree.Set("parameters/conditions/Idle", true);
     }
 }

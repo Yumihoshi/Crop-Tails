@@ -16,15 +16,18 @@ namespace CropTails.Scripts.Player.States;
 public class TillState : IState
 {
     private readonly Player _player;
-    private readonly AnimatedSprite2D _animatedSprite2D;
+    private readonly AnimationTree _animationTree;
+    private readonly AnimationPlayer _animationPlayer;
     private readonly PlayerFsm _fsm;
     private Vector2 _direction;
 
-    public TillState(Player player, AnimatedSprite2D animatedSprite2D,
+    public TillState(Player player, AnimationTree animationTree,
+        AnimationPlayer animationPlayer,
         PlayerFsm fsm)
     {
         _player = player;
-        _animatedSprite2D = animatedSprite2D;
+        _animationTree = animationTree;
+        _animationPlayer = animationPlayer;
         _fsm = fsm;
     }
 
@@ -37,34 +40,13 @@ public class TillState : IState
     {
         YumihoshiDebug.Print<ChopState>("玩家状态机", "进入耕种状态");
         _direction = context.Direction;
-        if (_direction == Vector2.Up)
-        {
-            _animatedSprite2D.Play("TillUp");
-        }
-        else if (_direction == Vector2.Down)
-        {
-            _animatedSprite2D.Play("TillDown");
-        }
-        else if (_direction == Vector2.Left)
-        {
-            _animatedSprite2D.Play("TillLeft");
-        }
-        else if (_direction == Vector2.Right)
-        {
-            _animatedSprite2D.Play("TillRight");
-        }
+        _animationTree.Set("parameters/Till/blend_position", _direction);
+        _animationTree.Set("parameters/conditions/Till", true);
     }
 
     public void OnProcess()
     {
-        if (!_animatedSprite2D.IsPlaying())
-        {
-            _fsm.Fsm.SwitchState(PlayerStateType.Idle, null, null,
-                new StateContext
-                {
-                    Direction = _direction
-                });
-        }
+        
     }
 
     public void OnPhysicsProcess()
@@ -73,6 +55,6 @@ public class TillState : IState
 
     public void OnExit(StateContext context = null)
     {
-        _animatedSprite2D.Stop();
+        _animationTree.Set("parameters/conditions/Till", false);
     }
 }
