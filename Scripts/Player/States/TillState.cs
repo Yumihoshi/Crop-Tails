@@ -1,12 +1,11 @@
 ﻿// *****************************************************************************
 // @author: 绘星tsuki
 // @email: xiaoyuesun915@gmail.com
-// @creationDate: 2025/02/16 20:02
+// @creationDate: 2025/02/17 14:02
 // @version: 1.0
 // @description:
 // *****************************************************************************
 
-using CropTails.Scripts.Common;
 using Godot;
 using LumiVerseFramework.Base.FSM;
 using LumiVerseFramework.Base.FSM.Interfaces;
@@ -14,14 +13,14 @@ using LumiVerseFramework.Common;
 
 namespace CropTails.Scripts.Player.States;
 
-public class MoveState : IState
+public class TillState : IState
 {
-    private readonly CharacterBody2D _player;
+    private readonly Player _player;
     private readonly AnimatedSprite2D _animatedSprite2D;
     private readonly PlayerFsm _fsm;
-    private Vector2 _direction = Vector2.Down;
+    private Vector2 _direction;
 
-    public MoveState(CharacterBody2D player, AnimatedSprite2D animatedSprite2D,
+    public TillState(Player player, AnimatedSprite2D animatedSprite2D,
         PlayerFsm fsm)
     {
         _player = player;
@@ -36,29 +35,29 @@ public class MoveState : IState
 
     public void OnEnter(StateContext context = null)
     {
-        YumihoshiDebug.Print<MoveState>("玩家状态机", "进入移动状态");
+        YumihoshiDebug.Print<ChopState>("玩家状态机", "进入耕种状态");
+        _direction = context.Direction;
+        if (_direction == Vector2.Up)
+        {
+            _animatedSprite2D.Play("TillUp");
+        }
+        else if (_direction == Vector2.Down)
+        {
+            _animatedSprite2D.Play("TillDown");
+        }
+        else if (_direction == Vector2.Left)
+        {
+            _animatedSprite2D.Play("TillLeft");
+        }
+        else if (_direction == Vector2.Right)
+        {
+            _animatedSprite2D.Play("TillRight");
+        }
     }
 
     public void OnProcess()
     {
-        Vector2 newDirection = GameInputHandler.GetInputDirection();
-        if (newDirection == Vector2.Up)
-        {
-            _animatedSprite2D.Play("WalkUp");
-        }
-        else if (newDirection == Vector2.Down)
-        {
-            _animatedSprite2D.Play("WalkDown");
-        }
-        else if (newDirection == Vector2.Left)
-        {
-            _animatedSprite2D.Play("WalkLeft");
-        }
-        else if (newDirection == Vector2.Right)
-        {
-            _animatedSprite2D.Play("WalkRight");
-        }
-        else
+        if (!_animatedSprite2D.IsPlaying())
         {
             _fsm.Fsm.SwitchState(PlayerStateType.Idle, null, null,
                 new StateContext
@@ -66,13 +65,10 @@ public class MoveState : IState
                     Direction = _direction
                 });
         }
-        _direction = newDirection;
     }
 
     public void OnPhysicsProcess()
     {
-        _player.Velocity = _direction * _fsm.Speed;
-        _player.MoveAndSlide();
     }
 
     public void OnExit(StateContext context = null)

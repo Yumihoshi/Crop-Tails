@@ -6,13 +6,14 @@
 // @description: 状态机节点基类
 // *****************************************************************************
 
+using System;
 using Godot;
 
 namespace LumiVerseFramework.Base.FSM;
 
-public abstract partial class FsmNode : Node
+public abstract partial class FsmNode<TStateType> : Node where TStateType : Enum
 {
-    public Fsm Fsm { get; } = new();
+    public Fsm<TStateType> Fsm { get; } = new();
 
     public override void _Process(double delta)
     {

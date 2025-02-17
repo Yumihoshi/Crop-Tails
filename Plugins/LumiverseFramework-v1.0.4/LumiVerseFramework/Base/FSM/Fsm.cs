@@ -6,16 +6,16 @@
 // @description: 有限状态机
 // *****************************************************************************
 
+using System;
 using System.Collections.Generic;
 using LumiVerseFramework.Base.FSM.Interfaces;
-using LumiVerseFramework.Base.FSM.Types;
 using LumiVerseFramework.Common;
 
 namespace LumiVerseFramework.Base.FSM;
 
-public class Fsm
+public class Fsm<TStateType> where TStateType : Enum
 {
-    public readonly Dictionary<StateType, IState> statesDic = new(); // 状态字典
+    public readonly Dictionary<TStateType, IState> statesDic = new(); // 状态字典
     public IState curState; // 当前状态
 
     /// <summary>
@@ -23,12 +23,12 @@ public class Fsm
     /// </summary>
     /// <param name="stateType">状态枚举类型</param>
     /// <param name="state">状态接口</param>
-    public void AddState(StateType stateType, IState state)
+    public void AddState(TStateType stateType, IState state)
     {
         // 如果字典中已经包含该状态，跳过添加
         if (statesDic.TryGetValue(stateType, out IState outState))
         {
-            YumihoshiDebug.Warn<Fsm>("框架状态机模板",
+            YumihoshiDebug.Warn<Fsm<TStateType>>("框架状态机模板",
                 $"无法添加状态，字典中已包含状态{stateType.ToString()}，跳过添加");
             return;
         }
@@ -43,7 +43,7 @@ public class Fsm
     /// <param name="curExitContext">当前状态退出OnExit传参</param>
     /// <param name="nextCheckContext">下一状态OnCheck传参</param>
     /// <param name="nextEnterContext">下一状态OnEnter传参</param>
-    public void SwitchState(StateType stateType,
+    public void SwitchState(TStateType stateType,
         StateContext curExitContext = null,
         StateContext nextCheckContext = null,
         StateContext nextEnterContext = null)
@@ -51,14 +51,14 @@ public class Fsm
         // 不包含该状态，报错
         if (!statesDic.TryGetValue(stateType, out IState outIState))
         {
-            YumihoshiDebug.Error<Fsm>("框架状态机模板",
+            YumihoshiDebug.Error<Fsm<TStateType>>("框架状态机模板",
                 $"无法切换状态，字典中没有该状态: {stateType.ToString()}");
             return;
         }
 
         if (!outIState.OnCheck(nextCheckContext))
         {
-            YumihoshiDebug.Warn<Fsm>("框架状态机模板",
+            YumihoshiDebug.Warn<Fsm<TStateType>>("框架状态机模板",
                 $"无法切换状态，状态检查失败: {stateType.ToString()}");
             return;
         }
@@ -74,12 +74,12 @@ public class Fsm
     /// 删除状态
     /// </summary>
     /// <param name="stateType"></param>
-    public void DeleteState(StateType stateType)
+    public void DeleteState(TStateType stateType)
     {
         // 不包含该状态，跳过
         if (!statesDic.TryGetValue(stateType, out IState outIState))
         {
-            YumihoshiDebug.Warn<Fsm>("框架状态机模板",
+            YumihoshiDebug.Warn<Fsm<TStateType>>("框架状态机模板",
                 $"无法删除状态，字典中没有该状态: {stateType.ToString()}");
             return;
         }

@@ -13,7 +13,7 @@ namespace CropTails.Scripts.Common;
 public static class GameInputHandler
 {
     private static Vector2 _direction = Vector2.Zero;
-    
+
     /// <summary>
     /// 获取移动方向
     /// </summary>
@@ -40,7 +40,7 @@ public static class GameInputHandler
         {
             _direction = Vector2.Zero;
         }
-        
+
         return _direction;
     }
 
@@ -51,5 +51,14 @@ public static class GameInputHandler
     public static bool IsMovementInput()
     {
         return _direction != Vector2.Zero;
+    }
+
+    /// <summary>
+    /// 是否使用工具
+    /// </summary>
+    /// <returns></returns>
+    public static bool UseTool()
+    {
+        return Input.IsActionJustPressed("Hit") || Input.IsActionPressed("Hit");
     }
 }

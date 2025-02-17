@@ -1,18 +1,18 @@
 ﻿// *****************************************************************************
 // @author: 绘星tsuki
 // @email: xiaoyuesun915@gmail.com
-// @creationDate: 2025/02/16 15:02
+// @creationDate: 2025/02/17 14:02
 // @version: 1.0
 // @description:
 // *****************************************************************************
 
-namespace LumiVerseFramework.Base.FSM.Types;
+namespace CropTails.Scripts.Player.States;
 
-/// <summary>
-/// 状态枚举，根据需求更改
-/// </summary>
-public enum StateType
+public enum PlayerStateType
 {
-    PlayerIdle = 1,
-    PlayerMove,
+    Idle = 1,
+    Move,
+    Chop,
+    Till,
+    Water
 }

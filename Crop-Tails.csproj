@@ -6,4 +6,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>CropTails</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
+  </ItemGroup>
 </Project>

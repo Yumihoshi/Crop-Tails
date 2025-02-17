@@ -1,6 +1,7 @@
-[gd_scene load_steps=46 format=3 uid="uid://55lg4nyw23fb"]
+[gd_scene load_steps=47 format=3 uid="uid://55lg4nyw23fb"]
 
 [ext_resource type="Texture2D" uid="uid://btx3xojjhwfg3" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/BasicCharakterSpritesheet.png" id="1_8b184"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_51o63"]
 [ext_resource type="Texture2D" uid="uid://ivfrej8har65" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/BasicCharakterActions.png" id="2_dxec7"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerFsm.cs" id="3_njhs0"]
 
@@ -173,7 +174,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5i18h")
 }],
-"loop": true,
+"loop": false,
 "name": &"ChopDown",
 "speed": 3.0
 }, {
@@ -184,7 +185,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j8ict")
 }],
-"loop": true,
+"loop": false,
 "name": &"ChopLeft",
 "speed": 3.0
 }, {
@@ -195,7 +196,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_824um")
 }],
-"loop": true,
+"loop": false,
 "name": &"ChopRight",
 "speed": 3.0
 }, {
@@ -206,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3qu5x")
 }],
-"loop": true,
+"loop": false,
 "name": &"ChopUp",
 "speed": 3.0
 }, {
@@ -261,7 +262,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5tod8")
 }],
-"loop": true,
+"loop": false,
 "name": &"TillDown",
 "speed": 3.0
 }, {
@@ -272,7 +273,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cxbqf")
 }],
-"loop": true,
+"loop": false,
 "name": &"TillLeft",
 "speed": 3.0
 }, {
@@ -283,7 +284,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i8g28")
 }],
-"loop": true,
+"loop": false,
 "name": &"TillRight",
 "speed": 3.0
 }, {
@@ -294,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tkrdh")
 }],
-"loop": true,
+"loop": false,
 "name": &"TillUp",
 "speed": 3.0
 }, {
@@ -349,7 +350,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap6dg")
 }],
-"loop": true,
+"loop": false,
 "name": &"WaterDown",
 "speed": 3.0
 }, {
@@ -360,7 +361,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cckjw")
 }],
-"loop": true,
+"loop": false,
 "name": &"WaterLeft",
 "speed": 3.0
 }, {
@@ -371,7 +372,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4omlm")
 }],
-"loop": true,
+"loop": false,
 "name": &"WaterRight",
 "speed": 3.0
 }, {
@@ -382,7 +383,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kqxco")
 }],
-"loop": true,
+"loop": false,
 "name": &"WaterUp",
 "speed": 3.0
 }]
@@ -391,13 +392,13 @@ animations = [{
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_51o63")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_acthe")
-animation = &"WalkDown"
+animation = &"WaterUp"
 autoplay = "IdleDown"
-frame_progress = 0.418542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
