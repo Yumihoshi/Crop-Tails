@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://uer364xtvo5y"]
+
+[ext_resource type="Texture2D" uid="uid://12504morhbso" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/BasicGrassBiomThings.png" id="1_umihb"]
+[ext_resource type="PackedScene" uid="uid://cgmndmjehf55v" path="res://Scenes/Components/CollectableComponent.tscn" id="2_hampj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avyfm"]
+atlas = ExtResource("1_umihb")
+region = Rect2(114, 18, 10, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbpxb"]
+radius = 4.0
+
+[node name="Stone" type="Sprite2D"]
+texture = SubResource("AtlasTexture_avyfm")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_hampj")]
+CollectableName = "岩石"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_xbpxb")
+debug_color = Color(0.255955, 0.631423, 0.186981, 0.42)

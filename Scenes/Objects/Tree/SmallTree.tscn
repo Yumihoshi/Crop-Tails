@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c48h6eutdmr1h"]
 
-[ext_resource type="Shader" path="res://Assets/Shaders/TreeShake.gdshader" id="1_01xpm"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Shake.gdshader" id="1_01xpm"]
 [ext_resource type="Texture2D" uid="uid://12504morhbso" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/BasicGrassBiomThings.png" id="1_3a2mk"]
 [ext_resource type="Script" path="res://Scripts/Objects/SmallTree.cs" id="2_cya86"]
 [ext_resource type="PackedScene" uid="uid://deayv73os0hsv" path="res://Scenes/Components/HurtComponent.tscn" id="2_i47kp"]
@@ -38,6 +38,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_x8n15")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_i47kp")]
+Tool = 1
 
 [node name="HurtCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, -1)

@@ -1655,6 +1655,7 @@ parameters/Walk/blend_position = Vector2(-1, 0)
 parameters/Water/blend_position = Vector2(0, -1)
 
 [node name="HitComponent" parent="." instance=ExtResource("5_w7jg1")]
+CurrentTool = 1
 
 [node name="HitCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 shape = SubResource("CircleShape2D_u1f00")

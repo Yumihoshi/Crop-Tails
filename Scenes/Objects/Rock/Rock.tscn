@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://cm75554jqwsg0"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/Shake.gdshader" id="1_jkhy7"]
+[ext_resource type="Texture2D" uid="uid://12504morhbso" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/BasicGrassBiomThings.png" id="1_qk7rg"]
+[ext_resource type="Script" path="res://Scripts/Objects/Rock.cs" id="2_432qh"]
+[ext_resource type="PackedScene" uid="uid://deayv73os0hsv" path="res://Scenes/Components/HurtComponent.tscn" id="2_fogkk"]
+[ext_resource type="PackedScene" uid="uid://bqndsg5kuo5ai" path="res://Scenes/Components/DamageComponent.tscn" id="3_44ure"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l351c"]
+resource_local_to_scene = true
+shader = ExtResource("1_jkhy7")
+shader_parameter/ShakeIntensify = 0.0
+shader_parameter/ShakeSpeed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6voh"]
+atlas = ExtResource("1_qk7rg")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmkri"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mb0ud"]
+radius = 7.0
+
+[node name="Rock" type="Sprite2D" node_paths=PackedStringArray("_hurtComponent", "_damageComponent")]
+material = SubResource("ShaderMaterial_l351c")
+position = Vector2(0, -3)
+texture = SubResource("AtlasTexture_i6voh")
+script = ExtResource("2_432qh")
+_hurtComponent = NodePath("HurtComponent")
+_damageComponent = NodePath("DamageComponent")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vmkri")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_fogkk")]
+Tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("CircleShape2D_mb0ud")
+debug_color = Color(0.756035, 0.359709, 0.718657, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_44ure")]
+MaxDamage = 5
