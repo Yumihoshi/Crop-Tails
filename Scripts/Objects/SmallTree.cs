@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading.Tasks;
 using CropTails.Scripts.InteractableComponent;
 using Godot;
 
@@ -22,6 +24,15 @@ public partial class SmallTree : Sprite2D
     private void HandleOnHurt(int hitDamage)
     {
         _damageComponent.ApplyDamage(hitDamage);
+        // 修改材质shader，实现摇晃
+        Material.Set("shader_parameter/ShakeIntensify", 0.5f);
+        _ = ResetMaterial();
+    }
+
+    private async Task ResetMaterial()
+    {
+        await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
+        Material.Set("shader_parameter/ShakeIntensify", 0.0f);
     }
 
     private void OnMaxDamageReached()
