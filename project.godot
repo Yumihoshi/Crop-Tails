@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Crop-Tails"
 config/tags=PackedStringArray("习作")
-run/main_scene="res://Scenes/Test/TestSceneYSort.tscn"
+run/main_scene="res://Scenes/Test/TestSceneNpcChicken.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Assets/Imgs/Icons/DefaultIcon.png"
 
@@ -82,6 +82,7 @@ Hit={
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_navigation/layer_1="Chicken Navigation"
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="Tool"
